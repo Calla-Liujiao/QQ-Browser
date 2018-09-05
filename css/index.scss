@@ -1,0 +1,201 @@
+
+.bg{
+    // background-color: aquamarine;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: transform 1s;
+
+
+    @mixin color(){
+        background-image:linear-gradient(white 40%,#ccc 60%,#ccc 70%,#999 80%,#777 90%,#777 100%);
+    }
+    @keyframes ani_circle {
+        0% {}
+        100% {
+          transform: translateX(-1000px) rotate(360deg);
+        }
+    }
+    >div{
+        @include color();
+        border-radius: 50%;
+        position: absolute;
+        animation: ani_circle 20s linear infinite;
+    
+    }
+    >div:nth-child(1) {
+        width: 150px;
+        height: 150px;
+        top: 5%;
+        left: 90%;
+    }
+      >div:nth-child(2) {
+        width: 150px;
+        height: 150px;
+        top: 15%;
+        left: 80%;
+      }
+      >div:nth-child(3) {
+        width: 250px;
+        height: 250px;
+        top: 25%;
+        left: 50%;
+      }
+      >div:nth-child(4) {
+        width: 300px;
+        height: 300px;
+        top: 70%;
+        left: 20%;
+      }
+      >div:nth-child(5) {
+        width: 350px;
+        height: 350px;
+        top: 55%;
+        left: 30%;
+      }
+      >div:nth-child(6) {
+        width: 200px;
+        height: 200px;
+        top: 25%;
+        left: 10%;
+      }
+}
+
+.bg_rotate{
+    transform: rotate(-25deg);
+} 
+//第一页动画
+.s1{
+    position: relative;
+    perspective: 1000px;
+    overflow: hidden;
+    .s1-box{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        transition: transform 1s;
+        .s1_btm{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+    }
+    .s1-box-begin{
+        transform: translate3d(-50%,-50%,900px) rotateY(180deg);
+    }
+}
+//第二屏动画
+.s2{
+    position: relative;
+    perspective: 1000px;
+    // overflow: hidden;
+    .s2-box{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        transition: transform 1s;
+    >img{
+        display: block;
+        }   
+    }
+    .s2-box-begin{
+        transform: translate3d(-50%,-50%,-10000px);
+    }
+    .s2-box-end{
+        transform: translate3d(-50%,-50%,1000px);
+    }
+}
+//第三屏动画
+.s3{
+    position: relative;
+    perspective: 1000px;
+    transition:transform 1s;
+    
+    .s3-box{
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        transform: rotateX(45deg);
+        transition: transform 1s;
+        .s3-title3{
+            position: absolute;
+            top: 80px;
+            left: -300px;
+            transition:transform 1s;
+            z-index: 10;
+        }
+        .s3-browser{
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            border: 1px solid #000;
+            transition:transform 1s;
+
+        }
+
+
+    }
+    .s3-box-begin{
+        transform: translateY(1000px);
+    }
+    .s3-box-begin .s3-title3{
+        transform: translateX(-1000px);
+    }
+    .s3-box-begin .s3-browser{
+        transform: translateX(1000px);
+    }
+
+}
+//第四屏动画
+.s4{
+    position: relative;
+    transition:transform 1s;
+    overflow: hidden;
+    .s4-box{
+        width: 600px;
+        height: 600px;
+        position: absolute;
+        top: 50%;
+        left:50%;
+        transform:translate(-50%,-50%);
+        transition:transform 1s;
+        .pic1{
+            position: absolute;
+            top: 40%;
+            left: 0;
+        }
+        .pic2{
+            position: absolute;
+            top: 56%;
+            left: 28%;
+        }
+        .pic3{
+            position: absolute;
+            top: 10%;
+            left: 15%;
+        }
+        .pic4{
+            position: absolute;
+            top: 35%;
+            right: 0;
+        }
+        .pic5{
+            position: absolute;
+            bottom:10%;
+            left: 0;
+        }
+    }
+    .s4-box-begin{
+        transform: translate(-1000px,-1000px) rotateZ(90deg);
+    }
+}
+
+
+
